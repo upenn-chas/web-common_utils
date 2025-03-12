@@ -1,0 +1,20 @@
+services:
+  pennchas_common.access_check:
+    class: \Drupal\common_utils\Access\AccessCheck
+    arguments: ['@current_user']
+  pennchas_common.moderator_access_check:
+    class: \Drupal\common_utils\Access\ModeratorCheck
+    arguments: ['@current_user']
+  pennchas_common.option_group:
+    class: \Drupal\common_utils\Option\GroupOption
+    arguments: ['@current_user']
+  pennchas_common.evaluation_check:
+    class: \Drupal\common_utils\Access\EvaluationCheck
+    arguments: ['@current_user']
+  pennchas_common.field_values_label:
+    class: \Drupal\common_utils\Option\FieldOption
+  pennchas_common.users:
+    class: \Drupal\common_utils\User\User
+  pennchas_common.moderation_log:
+    class: \Drupal\common_utils\Service\ModerationLog
+    arguments: ['@database', '@date.formatter', '@renderer']
